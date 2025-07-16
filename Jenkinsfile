@@ -6,12 +6,12 @@ pipeline {
         CONTAINER_NAME = 'flask-container'
     }
 
-    stages {
-        stage('Clone code') {
-            steps {
-                git url: 'https://github.com/phamduclong0412/flask-cicd.git', credentialsId: 'github-pat'
-            }
-        }
+    stage('Clone code') {
+    steps {
+        git branch: 'main', url: 'https://github.com/phamduclong0412/flask-cicd.git', credentialsId: 'github-pat'
+    }
+}
+
 
         stage('Build Docker image') {
             steps {
